@@ -7,6 +7,10 @@ go:
 before_install:
   - go get -t -v ./...
 
+branches:
+  only:
+  - Standard-OMG-email
+
 script:
   - ./go.test.sh
 
