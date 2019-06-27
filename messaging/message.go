@@ -345,9 +345,10 @@ func getMessageUpdates(userid string, sub Subscribe) {
 		case mail.TextHeader:
 			b, _ := ioutil.ReadAll(p.Body)
 			receivedMessage.Message = string(b)
-		case mail.AttachmentHeader:
-			filename, _ := h.Filename()
-			fmt.Println("Got attachment:", filename)
+			fmt.Println(h)
+			// case mail.AttachmentHeader:
+			// 	filename, _ := h.Filename()
+			// 	fmt.Println("Got attachment:", filename)
 		}
 	}
 
