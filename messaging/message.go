@@ -341,7 +341,7 @@ func getMessageUpdates(userid string, sub Subscribe) {
 			log.Fatal(err)
 		}
 
-		switch _ := p.Header.(type) {
+		switch h := p.Header.(type) {
 		case mail.TextHeader:
 			b, _ := ioutil.ReadAll(p.Body)
 			receivedMessage.Message = string(b)
