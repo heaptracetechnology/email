@@ -341,10 +341,11 @@ func getMessageUpdates(userid string, sub Subscribe) {
 			log.Fatal(err)
 		}
 
-		switch h := p.Header.(type) {
+		switch _ := p.Header.(type) {
 		case mail.TextHeader:
 			b, _ := ioutil.ReadAll(p.Body)
 			receivedMessage.Message = string(b)
+			fmt.Println(h)
 // 		case mail.AttachmentHeader:
 // 			filename, _ := h.Filename()
 // 			fmt.Println("Got attachment:", filename)
